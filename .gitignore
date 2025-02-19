@@ -4,6 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### Test
+/src/main/java/br/com/ygorfsguilherme/ui_blog/initializer
+
 ### STS ###
 .apt_generated
 .classpath
