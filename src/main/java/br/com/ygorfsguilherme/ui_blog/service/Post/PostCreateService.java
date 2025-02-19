@@ -27,9 +27,9 @@ public class PostCreateService {
     public CreatePostResponse create(PostRequest dto) {
 
         PostEntity entity = new PostEntity();
-        entity.setTitle(getTitleFromDto(dto.title()));
-        entity.setContent(dto.content());
-        entity.setTags(getTagsFromDto(dto.tags()));
+        entity.setTitle(getTitleFromDto(dto.getTitle()));
+        entity.setContent(dto.getContent());
+        entity.setTags(getTagsFromDto(dto.getTags()));
 
         PostEntity entitySave = postRepository.save(entity);
 
@@ -49,6 +49,13 @@ public class PostCreateService {
                 : List.of();
     }
 
+    /**
+     * Este método está obsoleto e será removido em uma versão futura.
+     * Não sendo necessário utilizar outro método.
+     *
+     * @deprecated Desde a versão 0.2.0. Será removido na versão 1.0.0.
+     */
+    @Deprecated(since = "0.2.0", forRemoval = true)
     private String getTitleFromDto(String title) {
         return (title == null || title.isBlank()) ? "Sem titulo" : title;
     }

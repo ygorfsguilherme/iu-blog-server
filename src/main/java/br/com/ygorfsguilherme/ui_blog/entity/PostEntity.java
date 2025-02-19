@@ -37,13 +37,13 @@ public class PostEntity {
       inverseJoinColumns = @JoinColumn(name = "tag_id"))
     private List<TagEntity> tags;
 
-    @Column(nullable = false, updatable = false)
+    @Column(nullable = false, updatable = false, name = "created_at")
     private LocalDateTime createdAt;
 
     @Column(nullable = false)
     private LocalDateTime updatedAt;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "published")
     private boolean published;
 
     @Column(nullable = false)
@@ -85,7 +85,7 @@ public class PostEntity {
     public LocalDateTime getUpdatedAt() { return updatedAt; }
 
     public boolean isPublished() { return published; }
-    public void setPublished() { this.published = !this.published; }
+    public void setPublished() { this.published = true; }
 
     public boolean isDeleted() { return deleted; }
     public void setDeleted() { this.deleted = !this.deleted; }
