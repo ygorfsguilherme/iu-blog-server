@@ -20,7 +20,7 @@
 - [Licença](#-licença)
 
 ## 📜 Changelog
-Para conferir todas as mudanças e atualizações do projeto, acesse o [CHANGELOG.md](https://github.com/ygorfsguilherme/ui-blog/blob/main/CHANGELOG.md).
+Para conferir todas as mudanças e atualizações do projeto, acesse o [CHANGELOG.md](https://github.com/ygorfsguilherme/ui-blog-server/blob/main/CHANGELOG.md).
 
 
 ## <img src="https://cdn-icons-png.flaticon.com/512/3534/3534033.png" style="widht:30px; height:30px;" /> Descrição
