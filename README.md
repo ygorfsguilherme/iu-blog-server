@@ -70,24 +70,128 @@ cd ui-blog-server
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
-<!-- ## <img src="https://cdn-icons-png.flaticon.com/512/3068/3068553.png" style="widht:30px; height:30px;" /> Endpoint
+## 📌 Endpoint
+### Todos os endpoint relacionado as tags
 
 <details>
-  <summary>Post</summary>
+  <summary>Adiciona uma nova tag ao sistema.</summary>
 
-  Primeiro, precisamos clonar o projeto.  
+  > Método: ```POST```
+  - URL exemplo: http://exemplo.com.br/tag/
 
-  > No terminal, clone o projeto:
+### Exemplo de Requisição (Body)
+```json
+{
+    "name": "HTML"
+}
+```
+### Resposta de Sucesso (201 Created)
+```json
+{
+    "id": "72f517f4-8b62-4afb-b05f-a6fd33eff570",
+    "name": "HTML"
+}
+```
+
+### Erro: Tag já cadastrada (409 Conflict)
+```json
+{
+    "message": "Tag já cadastrada",
+    "error": null,
+    "status": 409,
+    "timestamp": "2025-02-22T14:11:20.284689424"
+}
+```
+
 </details>
 
 <details>
-  <summary>Tag</summary>
+  <summary>Listar todas as tags cadastrada no sistema.</summary>
 
-  Primeiro, precisamos clonar o projeto.  
+  > Método: ```GET```
+  - URL exemplo: http://exemplo.com.br/tag/
 
-  > No terminal, clone o projeto:
-</details> -->
+### Resposta de Sucesso (200 Success)
+```json
+[
+    {
+        "id": "72f517f4-8b62-4afb-b05f-a6fd33eff570",
+        "name": "HTML"
+    }
+]
+```
 
+</details>
+
+### Todos os endpoint relacionado ao post.
+
+<details>
+  <summary>Criar uma nova postagem no sistema.</summary>
+
+  > Método: ```POST```
+  - URL exemplo: http://exemplo.com.br/post/
+
+  ### Exemplo de Requisição (Body)
+  ```json
+  {
+      "title": "Hello World",
+      "content": "<h1>Hello, World!</h1>",
+      "tags": ["72f517f4-8b62-4afb-b05f-a6fd33eff570"]
+  }
+  ```
+
+  ### Resposta de Sucesso (201 Created)
+  ```json
+  {
+      "id": "9f0c460e-69bb-4359-a48c-3495a34a3232",
+      "title": "Hello World",
+      "content": "<h1>Hello, World!</h1>",
+      "tags": [
+          {
+              "id": "72f517f4-8b62-4afb-b05f-a6fd33eff570",
+              "name": "HTML"
+          }
+      ],
+      "createdAt": "2025-02-22T14:40:00.724114299",
+      "updatedAt": "2025-02-22T14:40:00.724114299"
+  }
+  ```
+</details>
+
+<details>
+  <summary>Atualizar a postagem no sistema.</summary>
+
+  > Método: ```PUT```
+  - URL exemplo: http://exemplo.com.br/post/
+</details>
+
+<details>
+  <summary>Publica a postagem.</summary>
+
+  > Método: ```PATCH```
+  - URL exemplo: http://exemplo.com.br/post/publish/{id}/
+</details>
+
+<details>
+  <summary>Lista todas as postagens</summary>
+
+  > Método: ```GET```
+  - URL exemplo: http://exemplo.com.br/post/
+</details>
+
+<details>
+  <summary>Lista todas as postagens publicadas</summary>
+
+  > Método: ```GET```
+  - URL exemplo: http://exemplo.com.br/post/published/
+</details>
+
+<details>
+  <summary>Lista todas as postagens não publicadas</summary>
+
+  > Método: ```GET```
+  - URL exemplo: http://exemplo.com.br/post/unpublished
+</details>
 
 ## <img height="30px" src="https://img.icons8.com/external-filled-outline-icons-maxicons/85/null/external-balance-law-and-justice-filled-outline-filled-outline-icons-maxicons.png"/> Licença
 

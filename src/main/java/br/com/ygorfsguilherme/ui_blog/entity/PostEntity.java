@@ -57,7 +57,7 @@ public class PostEntity {
     }
 
     @PreUpdate
-    protected void onUpdate() {
+    public void onUpdate() {
         updatedAt = LocalDateTime.now();
     }
 
@@ -70,6 +70,8 @@ public class PostEntity {
     }
 
     public UUID getId() { return id; }
+    
+    public void setId(UUID id) { this.id = id; }
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
