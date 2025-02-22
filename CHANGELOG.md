@@ -6,6 +6,11 @@ O formato segue as convenções de [Keep a Changelog](https://keepachangelog.com
 
 ## [Unreleased]
 
+## [0.4.0] - 2025-02-21
+### Adicionado
+- Recurso para atualizar informações das postagens, incluindo título, conteúdo e tags.
+- Recurso para publicar postagens.
+
 ## [0.3.0] - 2025-02-19
 ### Adicionado
 - Exibição de postagens publicadas para visitantes sem necessidade de autenticação.
