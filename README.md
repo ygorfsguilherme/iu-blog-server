@@ -13,7 +13,6 @@
 ## <img height="30px" src="https://img.icons8.com/plasticine/100/null/todo-list.png"/> Tópicos
 - [Descrição](#-descrição)
 - [Funcionalidades](#-funcionalidades)
-- [Layout](#-layout-ou-deploy-da-aplicação)
 - [Ferramentas Utilizadas](#-ferramentas-utilizadas)
 - [Pré Requisitos](#-pré-requisitos)
 - [Executar / Testar](#-executar--testar)
@@ -162,7 +161,46 @@ cd ui-blog-server
   <summary>Atualizar a postagem no sistema.</summary>
 
   > Método: ```PUT```
-  - URL exemplo: http://exemplo.com.br/post/
+  - URL exemplo: http://exemplo.com.br/post/update/{id}
+
+  ### Exemplo de Requisição (Body)
+  ```json
+  {
+      "title": "Hello World 2",
+      "content": "<h1>Hello, World!</h1>",
+      "tags": ["19cf5489-3a1d-44fe-9426-4668c3c5173b", "11f5bae9-0e8c-4bbf-99d6-699e34a1aa15"]
+  }
+  ```
+
+  ### Resposta de Sucesso (201 Created)
+  ```json
+  {
+      "id": "7f3b6620-9da2-4c0b-8474-754165f57c40",
+      "title": "Hello World 2",
+      "content": "<h1>Hello, World!</h1>",
+      "tags": [
+          {
+              "id": "11f5bae9-0e8c-4bbf-99d6-699e34a1aa15",
+              "name": "JAVA"
+          },
+          {
+              "id": "19cf5489-3a1d-44fe-9426-4668c3c5173b",
+              "name": "HTML"
+          }
+      ],
+      "createdAt": "2025-02-22T17:40:44.859393",
+      "updatedAt": "2025-02-22T17:41:33.697056389"
+  }
+  ```
+  ### Erro: Post não encontrado (404 Not Found)
+  ```json
+  {
+    "message": "Post não encontrado",
+    "error": null,
+    "status": 404,
+    "timestamp": "2025-02-22T17:44:16.826831174"
+  }
+  ```
 </details>
 
 <details>
@@ -170,6 +208,19 @@ cd ui-blog-server
 
   > Método: ```PATCH```
   - URL exemplo: http://exemplo.com.br/post/publish/{id}/
+
+  ### Resposta de Sucesso (204 No Content)
+  - Sem retorno de dados
+
+  ### Erro: Post não encontrado (404 Not Found)
+  ```json
+  {
+      "message": "Post não encontrado",
+      "error": null,
+      "status": 404,
+      "timestamp": "2025-02-22T17:47:40.40225472"
+  }
+  ```
 </details>
 
 <details>
@@ -177,6 +228,42 @@ cd ui-blog-server
 
   > Método: ```GET```
   - URL exemplo: http://exemplo.com.br/post/
+
+  ### Resposta de Sucesso (200 Success)
+  ```json
+  [
+    {
+        "id": "a086b49b-aaf5-4ebb-9239-42a107b413de",
+        "title": "Hello World no Java",
+        "content": "<h1>Hello, World no Java!</h1>",
+        "tags": [
+            {
+                "id": "11f5bae9-0e8c-4bbf-99d6-699e34a1aa15",
+                "name": "JAVA"
+            }
+        ],
+        "createdAt": "2025-02-22T17:49:27.36118",
+        "updatedAt": "2025-02-22T17:49:27.36118"
+    },
+    {
+        "id": "7f3b6620-9da2-4c0b-8474-754165f57c40",
+        "title": "Hello World 2",
+        "content": "<h1>Hello, World!</h1>",
+        "tags": [
+            {
+                "id": "11f5bae9-0e8c-4bbf-99d6-699e34a1aa15",
+                "name": "JAVA"
+            },
+            {
+                "id": "19cf5489-3a1d-44fe-9426-4668c3c5173b",
+                "name": "HTML"
+            }
+        ],
+        "createdAt": "2025-02-22T17:40:44.859393",
+        "updatedAt": "2025-02-22T17:46:32.997506"
+    }
+  ]
+  ```
 </details>
 
 <details>
@@ -184,6 +271,29 @@ cd ui-blog-server
 
   > Método: ```GET```
   - URL exemplo: http://exemplo.com.br/post/published/
+
+  ### Resposta de Sucesso (200 Success)
+  ```json
+  [
+    {
+        "id": "7f3b6620-9da2-4c0b-8474-754165f57c40",
+        "title": "Hello World 2",
+        "content": "<h1>Hello, World!</h1>",
+        "tags": [
+            {
+                "id": "11f5bae9-0e8c-4bbf-99d6-699e34a1aa15",
+                "name": "JAVA"
+            },
+            {
+                "id": "19cf5489-3a1d-44fe-9426-4668c3c5173b",
+                "name": "HTML"
+            }
+        ],
+        "createdAt": "2025-02-22T17:40:44.859393",
+        "updatedAt": "2025-02-22T17:46:32.997506"
+    }
+  ]
+  ```
 </details>
 
 <details>
@@ -191,6 +301,25 @@ cd ui-blog-server
 
   > Método: ```GET```
   - URL exemplo: http://exemplo.com.br/post/unpublished
+
+  ### Resposta de Sucesso (200 Success)
+  ```json
+  [
+      {
+          "id": "a086b49b-aaf5-4ebb-9239-42a107b413de",
+          "title": "Hello World no Java",
+          "content": "<h1>Hello, World no Java!</h1>",
+          "tags": [
+              {
+                  "id": "11f5bae9-0e8c-4bbf-99d6-699e34a1aa15",
+                  "name": "JAVA"
+              }
+          ],
+          "createdAt": "2025-02-22T17:49:27.36118",
+          "updatedAt": "2025-02-22T17:49:27.36118"
+      }
+  ]
+  ```
 </details>
 
 ## <img height="30px" src="https://img.icons8.com/external-filled-outline-icons-maxicons/85/null/external-balance-law-and-justice-filled-outline-filled-outline-icons-maxicons.png"/> Licença
