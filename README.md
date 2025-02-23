@@ -24,7 +24,7 @@ Para conferir todas as mudanças e atualizações do projeto, acesse o [CHANGELO
 
 ## <img src="https://cdn-icons-png.flaticon.com/512/3534/3534033.png" style="widht:30px; height:30px;" /> Descrição
 
-UI Blog criado com o objetivo de documentar e compartilhar conhecimentos adquiridos ao longo da jornada no desenvolvimento de software. O blog serve como um espaço para registrar conceitos, práticas, dicas e desafios encontrados durante os estudos e projetos, abordando diversas tecnologias, linguagens de programação e ferramentas.
+IU Blog criado com o objetivo de documentar e compartilhar conhecimentos adquiridos ao longo da jornada no desenvolvimento de software. O blog serve como um espaço para registrar conceitos, práticas, dicas e desafios encontrados durante os estudos e projetos, abordando diversas tecnologias, linguagens de programação e ferramentas.
 
 ### Objetivos com a ferramenta:
 - Registrar aprendizados e insights obtidos durante estudos e práticas de desenvolvimento.
@@ -324,4 +324,4 @@ cd ui-blog-server
 
 ## <img height="30px" src="https://img.icons8.com/external-filled-outline-icons-maxicons/85/null/external-balance-law-and-justice-filled-outline-filled-outline-icons-maxicons.png"/> Licença
 
-UI Blog é licenciado pelo [MIT License](https://github.com/ygorfsguilherme/ui-blog/blob/main/LICENSE).
+IU Blog é licenciado pelo [MIT License](https://github.com/ygorfsguilherme/ui-blog/blob/main/LICENSE).
