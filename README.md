@@ -70,10 +70,67 @@ cd ui-blog-server
 ```
 
 ## 📌 Endpoint
-### Todos os endpoint relacionado as tags
+#### Alguns endpoints requerem autenticação 🔒.
+### Autenticação 
 
 <details>
-  <summary>Adiciona uma nova tag ao sistema.</summary>
+  <summary>Cadastra um novo usuário administrador no sistema.</summary>
+
+> Método: ```POST```
+- URL exemplo: http://exemplo.com.br/auth/register
+
+### Exemplo de Requisição (Body)
+```json
+{
+  "username": "admin_user",
+  "password": "password123"
+}
+
+```
+
+### Resposta de Sucesso (201 Created)
+> Sem retorno de dados
+### Erro: Usuário já cadastrado (409 Conflict)
+
+```json
+{
+  "message": "Usuário já cadastrado",
+  "error": null,
+  "status": 409,
+  "timestamp": "2026-08-15T07:08:03.123456789"
+}
+```
+</details>
+
+<details>
+  <summary>Realizar o login do usuário no sistema.</summary>
+
+> Método: ```POST```
+- URL exemplo: http://exemplo.com.br/auth/login
+
+### Exemplo de Requisição (Body)
+
+```json
+{
+  "username": "admin_user",
+  "password": "password123"
+}
+```
+
+### Resposta de Sucesso (200 Success)
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1Ni..."
+}
+```
+
+</details>
+
+### Tags
+
+<details>
+  <summary>Adiciona uma nova tag ao sistema 🔒</summary>
 
   > Método: ```POST```
   - URL exemplo: http://exemplo.com.br/tag/
@@ -105,7 +162,7 @@ cd ui-blog-server
 </details>
 
 <details>
-  <summary>Listar todas as tags cadastrada no sistema.</summary>
+  <summary>Listar todas as tags cadastrada no sistema</summary>
 
   > Método: ```GET```
   - URL exemplo: http://exemplo.com.br/tag/
@@ -122,10 +179,10 @@ cd ui-blog-server
 
 </details>
 
-### Todos os endpoint relacionado ao post.
+### Postagem
 
 <details>
-  <summary>Criar uma nova postagem no sistema.</summary>
+  <summary>Criar uma nova postagem no sistema 🔒</summary>
 
   > Método: ```POST```
   - URL exemplo: http://exemplo.com.br/post/
@@ -158,7 +215,7 @@ cd ui-blog-server
 </details>
 
 <details>
-  <summary>Atualizar a postagem no sistema.</summary>
+  <summary>Atualizar a postagem no sistema 🔒</summary>
 
   > Método: ```PUT```
   - URL exemplo: http://exemplo.com.br/post/update/{id}
@@ -204,7 +261,7 @@ cd ui-blog-server
 </details>
 
 <details>
-  <summary>Publica a postagem.</summary>
+  <summary>Publica a postagem 🔒</summary>
 
   > Método: ```PATCH```
   - URL exemplo: http://exemplo.com.br/post/publish/{id}/
@@ -224,7 +281,7 @@ cd ui-blog-server
 </details>
 
 <details>
-  <summary>Lista todas as postagens</summary>
+  <summary>Lista todas as postagens 🔒</summary>
 
   > Método: ```GET```
   - URL exemplo: http://exemplo.com.br/post/
@@ -297,7 +354,7 @@ cd ui-blog-server
 </details>
 
 <details>
-  <summary>Lista todas as postagens não publicadas</summary>
+  <summary>Lista todas as postagens não publicadas 🔒</summary>
 
   > Método: ```GET```
   - URL exemplo: http://exemplo.com.br/post/unpublished
