@@ -24,7 +24,7 @@ Para conferir todas as mudanças e atualizações do projeto, acesse o [CHANGELO
 
 ## <img src="https://cdn-icons-png.flaticon.com/512/3534/3534033.png" style="widht:30px; height:30px;" /> Descrição
 
-UI Blog criado com o objetivo de documentar e compartilhar conhecimentos adquiridos ao longo da jornada no desenvolvimento de software. O blog serve como um espaço para registrar conceitos, práticas, dicas e desafios encontrados durante os estudos e projetos, abordando diversas tecnologias, linguagens de programação e ferramentas.
+IU Blog criado com o objetivo de documentar e compartilhar conhecimentos adquiridos ao longo da jornada no desenvolvimento de software. O blog serve como um espaço para registrar conceitos, práticas, dicas e desafios encontrados durante os estudos e projetos, abordando diversas tecnologias, linguagens de programação e ferramentas.
 
 ### Objetivos com a ferramenta:
 - Registrar aprendizados e insights obtidos durante estudos e práticas de desenvolvimento.
@@ -70,10 +70,67 @@ cd ui-blog-server
 ```
 
 ## 📌 Endpoint
-### Todos os endpoint relacionado as tags
+#### Alguns endpoints requerem autenticação 🔒.
+### Autenticação 
 
 <details>
-  <summary>Adiciona uma nova tag ao sistema.</summary>
+  <summary>Cadastra um novo usuário administrador no sistema.</summary>
+
+> Método: ```POST```
+- URL exemplo: http://exemplo.com.br/auth/register
+
+### Exemplo de Requisição (Body)
+```json
+{
+  "username": "admin_user",
+  "password": "password123"
+}
+
+```
+
+### Resposta de Sucesso (201 Created)
+> Sem retorno de dados
+### Erro: Usuário já cadastrado (409 Conflict)
+
+```json
+{
+  "message": "Usuário já cadastrado",
+  "error": null,
+  "status": 409,
+  "timestamp": "2026-08-15T07:08:03.123456789"
+}
+```
+</details>
+
+<details>
+  <summary>Realizar o login do usuário no sistema.</summary>
+
+> Método: ```POST```
+- URL exemplo: http://exemplo.com.br/auth/login
+
+### Exemplo de Requisição (Body)
+
+```json
+{
+  "username": "admin_user",
+  "password": "password123"
+}
+```
+
+### Resposta de Sucesso (200 Success)
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1Ni..."
+}
+```
+
+</details>
+
+### Tags
+
+<details>
+  <summary>Adiciona uma nova tag ao sistema 🔒</summary>
 
   > Método: ```POST```
   - URL exemplo: http://exemplo.com.br/tag/
@@ -105,7 +162,7 @@ cd ui-blog-server
 </details>
 
 <details>
-  <summary>Listar todas as tags cadastrada no sistema.</summary>
+  <summary>Listar todas as tags cadastrada no sistema</summary>
 
   > Método: ```GET```
   - URL exemplo: http://exemplo.com.br/tag/
@@ -122,10 +179,10 @@ cd ui-blog-server
 
 </details>
 
-### Todos os endpoint relacionado ao post.
+### Postagem
 
 <details>
-  <summary>Criar uma nova postagem no sistema.</summary>
+  <summary>Criar uma nova postagem no sistema 🔒</summary>
 
   > Método: ```POST```
   - URL exemplo: http://exemplo.com.br/post/
@@ -158,7 +215,7 @@ cd ui-blog-server
 </details>
 
 <details>
-  <summary>Atualizar a postagem no sistema.</summary>
+  <summary>Atualizar a postagem no sistema 🔒</summary>
 
   > Método: ```PUT```
   - URL exemplo: http://exemplo.com.br/post/update/{id}
@@ -204,7 +261,7 @@ cd ui-blog-server
 </details>
 
 <details>
-  <summary>Publica a postagem.</summary>
+  <summary>Publica a postagem 🔒</summary>
 
   > Método: ```PATCH```
   - URL exemplo: http://exemplo.com.br/post/publish/{id}/
@@ -224,7 +281,7 @@ cd ui-blog-server
 </details>
 
 <details>
-  <summary>Lista todas as postagens</summary>
+  <summary>Lista todas as postagens 🔒</summary>
 
   > Método: ```GET```
   - URL exemplo: http://exemplo.com.br/post/
@@ -297,7 +354,7 @@ cd ui-blog-server
 </details>
 
 <details>
-  <summary>Lista todas as postagens não publicadas</summary>
+  <summary>Lista todas as postagens não publicadas 🔒</summary>
 
   > Método: ```GET```
   - URL exemplo: http://exemplo.com.br/post/unpublished
@@ -324,4 +381,4 @@ cd ui-blog-server
 
 ## <img height="30px" src="https://img.icons8.com/external-filled-outline-icons-maxicons/85/null/external-balance-law-and-justice-filled-outline-filled-outline-icons-maxicons.png"/> Licença
 
-UI Blog é licenciado pelo [MIT License](https://github.com/ygorfsguilherme/ui-blog/blob/main/LICENSE).
+IU Blog é licenciado pelo [MIT License](https://github.com/ygorfsguilherme/ui-blog/blob/main/LICENSE).
